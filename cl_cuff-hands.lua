@@ -1,5 +1,4 @@
 
-
 --[[ HANDCUFF SCRIPT ]]--
 RegisterNetEvent("Handcuff")
 AddEventHandler("Handcuff", function()
@@ -46,6 +45,24 @@ AddEventHandler("Handsup", function()
 				TriggerEvent("chatMessage", "", {255, 0, 0}, "Your hands are up.")
 			end		
 		end)
+	end
+end)
+--]]
+
+--[[---------------------]]--
+
+--[[ DRAG SCRIPT ]]--
+local drag = false
+
+RegisterNetEvent("Drag")
+AddEventHandler("Drag", function(oid)
+	if drag == false then
+		local otherPlayer = tonumber(oid)
+		local oPed = GetPlayerPed(GetPlayerFromServerId(otherPlayer))
+		local myPed = GetPlayerPed(PlayerId())
+		AttachEntityToEntity(myPed, oPed, 11816, 0.54, 0.54, 0.0, 0.0, 0.0, 0.0, false, false, false, false, 2, true)
+	elseif drag == true then
+		DetachEntity(GetPlayerPed(PlayerId()), true, false)
 	end
 end)
 --]]
