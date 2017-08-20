@@ -9,14 +9,6 @@ AddEventHandler("chatMessage", function(source, name, message)
 		end
 	end
 
-	if cm[1] == "/drag" then
-		CancelEvent()
-		if tablelength(cm) > 1 then
-			local tPID = tonumber(cm[2])
-			TriggerClientEvent("Drag", tPID, source)
-		end
-	end
-
 	if cm[1] == "/hu" then
 		CancelEvent()
 		TriggerClientEvent("Handsup", source)
