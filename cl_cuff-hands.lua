@@ -65,6 +65,7 @@ Citizen.CreateThread(function()
 		Citizen.Wait(0)
 
 		if handcuff and not IsEntityPlayingAnim(GetPlayerPed(PlayerId()), "mp_arresting", "idle", 3) then
+			Citizen.Wait(3000)
 			Citizen.Trace("BACKUP CUFFING TRIGGERED")
 			TaskPlayAnim(GetPlayerPed(PlayerId()), "mp_arresting", "idle", 8.0, -8, -1, 49, 0, 0, 0, 0)
 		end
