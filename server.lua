@@ -8,6 +8,5 @@ end, false)
 ---------------------------------------------------------------------------
 RegisterServerEvent("CheckHandcuff")
 AddEventHandler("CheckHandcuff", function(player)
-	print("Player: " .. player)
 	TriggerClientEvent("Handcuff", tonumber(player))
 end)
